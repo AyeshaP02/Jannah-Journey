@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take Quiz</title>
+</head>
+<body>
+
+<h2>{{ quiz[1] }}</h2>
+
+<form method="POST" action="/submit_quiz/{{ quiz[0] }}">
+
+{% for q, answers in quiz_data %}
+    <p>{{ q[1] }}</p>
+
+    {% for a in answers %}
+        <input type="radio" name="question_{{ q[0] }}" value="{{ a[0] }}">
+        {{ a[2] }} <br>
+    {% endfor %}
+
+{% endfor %}
+
+<br>
+<button type="submit">Submit Quiz</button>
+
+</form>
+
+</body>
+</html>

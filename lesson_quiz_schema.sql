@@ -36,7 +36,7 @@ CREATE TABLE Questions (
     quiz_ID INTEGER,
     question_text TEXT NOT NULL,
     correct_answer VARCHAR(250) NOT NULL,
-    FOREIGN KEY (quiz_ID) REFERENCES Quizzes(quiz_ID) ON DELETE CASCADE
+    FOREIGN KEY (quiz_ID) REFERENCES Quiz(quiz_ID) ON DELETE CASCADE
 );
 
 -- Answer Choices Table
@@ -45,6 +45,7 @@ CREATE TABLE Choices (
     choice_ID INTEGER PRIMARY KEY AUTOINCREMENT,
     question_ID INTEGER,
     choice_text VARCHAR(250) NOT NULL,
+    is_correct INTEGER DEFAULT 0,
     FOREIGN KEY (question_ID) REFERENCES Questions(question_ID) ON DELETE CASCADE
 );
 
@@ -56,6 +57,6 @@ CREATE TABLE Quiz_Results (
     score INTEGER,
     completion_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_ID) REFERENCES Users(user_ID),
-    FOREIGN KEY (quiz_ID) REFERENCES Quizzes (quiz_ID)
+    FOREIGN KEY (quiz_ID) REFERENCES Quiz (quiz_ID)
 );
 
