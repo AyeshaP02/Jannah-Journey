@@ -23,7 +23,7 @@ def create_lesson():
             return "Error: Title and Content are required"
         conn = get_db()
         cursor = conn.cursor()
-        cursor.execute("""INSERT INTO Lessons(title, topic, content) VALUES (?, ?, ?)""", (title, topic, content))
+        cursor.execute("""INSERT INTO Lessons(title, topic, content,) VALUES (?, ?, ?)""", (title, topic, content))
         conn.commit()
         conn.close()
     
