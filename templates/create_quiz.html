@@ -9,8 +9,19 @@
 
 <form method="POST">
 
-    Quiz Title:
-    <input type="text" name="title"><br><br>
+    <!--Quiz Title:-->
+    <label>Quiz Title:</label>
+    <input type="text" name="title" required><br><br>
+
+<!--link to lesson-->
+<label>Select Lesson:</label><br>
+<select name ="lesson_id" required>
+    {% for lesson in lessons %}
+        <option value="{{ lesson[0] }}">{{lesson[1] }}</option>
+    {% endfor %}
+</select>
+
+<br><br>
 
     <!-- Question 1 -->
     <p>Question 1:</p>

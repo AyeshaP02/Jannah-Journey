@@ -1,0 +1,46 @@
+<!--F5.1 Display student progress-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Progress</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+        table {
+            width: 70%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background: #00ff66;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h2 style="text-align:center;">Student Progress</h2>
+<table>
+    <tr>
+        <th>Quiz</th>
+        <th>Score</th>
+        <th>Date Taken</th>
+    </tr>
+    {% for row in results %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

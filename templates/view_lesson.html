@@ -1,0 +1,50 @@
+<!--View lesson in lesson library-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ lesson[1] }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .lesson-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 { color: #333; }
+        .topic {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .content {
+            line-height: 1.7;
+            color: #555;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+<div class="lesson-box">
+    <h2>{{ lesson[1] }}</h2>
+    <p class="topic">Topic: {{ lesson[2] }}</p>
+    <p class="content">{{ lesson[3] }}</p>
+    <a href="/lessons">← Back to Lessons</a>
+</div>
+</body>
+</html>

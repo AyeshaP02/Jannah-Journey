@@ -2,7 +2,7 @@
  -- Date: 3/26/26
  
  -- Users Table
-CREATE TABLE Users (
+ CREATE TABLE IF NOT EXISTS Users (
     user_ID INTEGER PRIMARY KEY AUTOINCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(250) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE Users (
 
 -- Lessons Table
 -- Stores all lesson content
-CREATE TABLE Lessons (
+CREATE TABLE IF NOT EXISTS Lessons (
     lesson_ID INTEGER PRIMARY KEY AUTOINCREMENT,
     title VARCHAR(250) NOT NULL,
     topic VARCHAR(200),
@@ -21,7 +21,7 @@ CREATE TABLE Lessons (
 
 -- Quizzes Table
 -- Will handle quizzes, questions, and answer choices
-CREATE TABLE Quiz (
+CREATE TABLE IF NOT EXISTS Quiz (
     quiz_ID INTEGER PRIMARY KEY AUTOINCREMENT,
     lesson_ID INTEGER,
     title VARCHAR(250) NOT NULL,
@@ -31,17 +31,16 @@ CREATE TABLE Quiz (
 -- Questions Table
 -- Each question belongs to one quiz (1 - many relationship) 
 
-CREATE TABLE Questions (
+CREATE TABLE IF NOT EXISTS Questions (
     question_ID  INTEGER PRIMARY KEY AUTOINCREMENT,
     quiz_ID INTEGER,
     question_text TEXT NOT NULL,
-    correct_answer VARCHAR(250) NOT NULL,
     FOREIGN KEY (quiz_ID) REFERENCES Quiz(quiz_ID) ON DELETE CASCADE
 );
 
 -- Answer Choices Table
 -- Stores Multiple Choice answers
-CREATE TABLE Choices (
+CREATE TABLE IF NOT EXISTS Choices (
     choice_ID INTEGER PRIMARY KEY AUTOINCREMENT,
     question_ID INTEGER,
     choice_text VARCHAR(250) NOT NULL,
@@ -50,7 +49,7 @@ CREATE TABLE Choices (
 );
 
 -- Quiz Results Table
-CREATE TABLE Quiz_Results (
+CREATE TABLE IF NOT EXISTS Quiz_Results (
     result_ID INTEGER PRIMARY KEY AUTOINCREMENT,
     user_ID INTEGER,
     quiz_ID INTEGER,

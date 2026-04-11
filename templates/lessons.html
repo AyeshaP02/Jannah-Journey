@@ -63,7 +63,7 @@
     {% for lesson in lessons %}
     <tr>
         <td>{{ lesson[0] }}</td>
-        <td>{{ lesson[1] }}</td>
+        <td><a href="/lesson/{{ lesson[0] }}">{{ lesson[1] }}</a></td>
         <td>{{ lesson[2] }}</td>
         <td>{{ lesson[3] }}</td>
     </tr>
