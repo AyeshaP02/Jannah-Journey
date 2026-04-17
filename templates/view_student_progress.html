@@ -1,0 +1,63 @@
+<!--F6.2 Selection of a specific student to view their progress-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ student[1] }}'s Progress</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            max-width: 800px; margin: 40px auto; 
+            background: #f5f5f5; 
+            padding: 20px; }
+
+        h2 { color: #333; }
+
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            background: white; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+        th { 
+            background: #4CAF50; 
+            color: white; 
+            padding: 12px; 
+            text-align: left; }
+
+        td { 
+            padding: 10px 12px; 
+            border-bottom: 1px solid #ddd; }
+
+        a.btn { 
+            display: inline-block; 
+            margin-top: 20px; 
+            padding: 10px 20px; 
+            background: #4CAF50; 
+            color: white; 
+            border-radius: 5px; 
+            text-decoration: none; }
+    </style>
+</head>
+
+<body>
+
+<h2>{{ student[1] }}'s Progress</h2>
+<table>
+    <tr>
+        <th>Quiz</th>
+        <th>Score</th>
+        <th>Date Taken</th>
+    </tr>
+    {% for result in results %}
+    <tr>
+        <td>{{ result[0] }}</td>
+        <td>{{ result[1] }}</td>
+        <td>{{ result[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a class="btn" href="/teacher/dashboard"> Back to Dashboard</a>
+
+</body>
+</html>

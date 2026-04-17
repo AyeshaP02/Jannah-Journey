@@ -2,26 +2,89 @@
 <html>
 <head>
     <title>Take Quiz</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        h2 { color: #333; }
+
+
+        .question-box {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question-box p {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .question-box label {
+            display: block;
+            padding: 8px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .question-box label:hover {
+            background-color: #f1f1f1;
+        }
+        .btn-submit {
+            padding: 10px 24px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .btn-submit:hover { background-color: #45a049; }
+
+
+        .btn-cancel {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 15px;
+            margin-left: 10px;
+        }
+        .btn-cancel:hover { background-color: #c0392b; }
+    </style>
 </head>
+
 <body>
 
 <h2>{{ quiz[1] }}</h2>
 
+
 <form method="POST" action="/submit_quiz/{{ quiz[0] }}">
 
-{% for q, answers in quiz_data %}
-    <p>{{ q[1] }}</p>
+    {% for q, answers in quiz_data %}
+    <div class="question-box">
+        <p>{{ loop.index }}. {{ q[1] }}</p>
 
-    {% for a in answers %}
-        <input type="radio" name="question_{{ q[0] }}" value="{{ a[0] }}">
-        {{ a[2] }} <br>
+
+        {% for a in answers %}
+        <label>
+            <input type="radio" name="question_{{ q[0] }}" value="{{ a[0] }}">
+            {{ a[2] }}
+        </label>
+        {% endfor %}
+    </div>
     {% endfor %}
 
-{% endfor %}
-
-<br>
-<button type="submit">Submit Quiz</button>
-
+    <button class="btn-submit" type="submit">Submit Quiz</button>
+    <a class="btn-cancel" href="/lessons">Cancel</a>
 </form>
 
 </body>

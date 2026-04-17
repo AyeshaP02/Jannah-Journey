@@ -1,0 +1,106 @@
+<!--Teacher Dashboard F6.1-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Dashboard</title>
+
+    <style>
+        body { 
+            font-family: Arial; 
+            max-width: 900px; 
+            margin: 40px auto; 
+            background: #f5f5f5; 
+            padding: 20px; }
+
+        h2, h3 { 
+            color: #333; }
+
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            background: white; 
+            margin-bottom: 30px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+        th { 
+            background: #4CAF50; 
+            color: white; 
+            padding: 12px; 
+            text-align: left; }
+
+        td { 
+            padding: 10px 12px; 
+            border-bottom: 1px solid #ddd; }
+
+        tr:hover { 
+            background: #f1f1f1; }
+
+        a.btn { 
+            display: inline-block; 
+            padding: 6px 14px; 
+            background: #4CAF50; 
+            color: white; 
+            border-radius: 4px; 
+            text-decoration: none; }
+
+        a.btn:hover { 
+            background: #45a049; }
+
+        .logout { 
+            float: right; 
+            padding: 8px 16px; 
+            background: #e74c3c; 
+            color: white; 
+            border-radius: 5px; 
+            text-decoration: none; }
+    </style>
+</head>
+
+<body>
+<a href="/logout" class="logout">Logout</a>
+<h2>Teacher Dashboard</h2>
+
+<h3>All Students</h3>
+
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Quizzes Taken</th>
+        <th>Average Score</th>
+        <th>Details</th>
+    </tr>
+
+    {% for student in students %}
+    <tr>
+        <td>{{ student[1] }}</td>
+        <td>{{ student[2] }}</td>
+        <td>{{ "%.1f"|format(student[3]) if student[3] else "N/A" }}</td>
+        <td><a class="btn" href="/teacher/student/{{ student[0] }}">View</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>All Quizzes</h3>
+
+<table>
+    <tr>
+        <th>Quiz Title</th>
+        <th>Times Taken</th>
+        <th>Average Score</th>
+    </tr>
+    
+    {% for quiz in quizzes %}
+    <tr>
+        <td>{{ quiz[0] }}</td>
+        <td>{{ quiz[1] }}</td>
+        <td>{{ "%.1f"|format(quiz[2]) if quiz[2] else "N/A" }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a class="btn" href="/lessons">Lessons</a>
+<a class="btn" href="/create_lesson">Create Lesson</a>
+<a class="btn" href="/create_quiz">Create Quiz</a>
+
+</body>
+</html>
