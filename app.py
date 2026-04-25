@@ -269,6 +269,7 @@ def take_quiz(quiz_ID):
     conn.close()
 
     return render_template('take_quiz.html', quiz=quiz, quiz_data=quiz_data)
+    #return f"<p>Quiz: {quiz}</p><p>Questions: {questions}</p><p>Quiz Data: {quiz_data}</p>"
 
 
 
@@ -306,15 +307,10 @@ def submit_quiz(quiz_ID):
         if result and result[0] == 1:
             score += 1
 
-
-
-
-
-
 # F4.3 Store result in database
     cursor.execute(
-        "INSERT INTO Quiz_Results (quiz_ID, score) VALUES (?, ?)",
-        (quiz_ID, score)
+        "INSERT INTO Quiz_Results (user_ID, quiz_ID, score) VALUES (?, ?, ?)",
+        (user_id, quiz_ID, score)
     )
     conn.commit()
     conn.close()
@@ -329,21 +325,21 @@ def submit_quiz(quiz_ID):
 #F5.1 Student Progress & Dashboard
 @app.route('/progress')
 def progress():
-     if not session.get('user_ID'):
+    if not session.get('user_ID'):
         return redirect(url_for('login'))
      
-     conn = get_db()
-     cursor = conn.cursor()
-     cursor.execute("""
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("""
                     SELECT Quiz.title, Quiz_Results.score, Quiz_Results.completion_date
                     FROM Quiz_Results
                     JOIN Quiz ON Quiz_Results.quiz_ID = Quiz.quiz_ID
                     WHERE Quiz_Results.user_ID = ?
                     ORDER BY Quiz_Results.completion_date DESC """, (session.get('user_ID'),))
     
-     data = cursor.fetchall()
-     conn.close()
-     return render_template('student_progress.html', results=data)
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('student_progress.html', results=data)
 
 
 

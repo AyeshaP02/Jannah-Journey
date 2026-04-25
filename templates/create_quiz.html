@@ -2,6 +2,57 @@
 <html>
 <head>
     <title>Create Quiz</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f0faf5;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -27,8 +78,8 @@
     <p>Question 1:</p>
     <input type="text" name="question_1"><br>
 
-    <input type="text" name="answer_1_1"> <input type="radio" name="correct_1" value="1"> Correct<br>
-    <input type="text" name="answer_1_2"> <input type="radio" name="correct_1" value="2"><br>
+    <input type="text" name="answer_1_1"> <input type="radio" name="correct_1" value="1"><br>
+    <input type="text" name="answer_1_2"> <input type="radio" name="correct_1" value="2"> Correct<br>
     <input type="text" name="answer_1_3"> <input type="radio" name="correct_1" value="3"><br>
     <input type="text" name="answer_1_4"> <input type="radio" name="correct_1" value="4"><br>
 
@@ -49,9 +100,9 @@
     <p>Question 3:</p>
     <input type="text" name="question_3"><br>
 
-    <input type="text" name="answer_3_1"> <input type="radio" name="correct_3" value="1"> Correct<br>
+    <input type="text" name="answer_3_1"> <input type="radio" name="correct_3" value="1"><br>
     <input type="text" name="answer_3_2"> <input type="radio" name="correct_3" value="2"><br>
-    <input type="text" name="answer_3_3"> <input type="radio" name="correct_3" value="3"><br>
+    <input type="text" name="answer_3_3"> <input type="radio" name="correct_3" value="3"> Correct<br>
     <input type="text" name="answer_3_4"> <input type="radio" name="correct_3" value="4"><br>
 
     <br>

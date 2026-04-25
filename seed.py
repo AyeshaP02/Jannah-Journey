@@ -1,3 +1,4 @@
+
 import sqlite3
 
 conn = sqlite3.connect('database.db') 
@@ -7,12 +8,12 @@ with open ('lesson_quiz_schema.sql', 'r') as f:
     schema = f.read()
     cursor.executescript(schema)
 
-# ── Users ─────────────────────────────────────────────────
-#cursor.executemany("INSERT INTO Users (username, password, role) VALUES (?, ?, ?)", [
-#   ("admin_teacher", "password123", "teacher"),
-  #  ("student_ali", "password123", "student"),
-   # ("student_fatima", "password123", "student"),
-#])
+ #── Users ─────────────────────────────────────────────────
+cursor.executemany("INSERT INTO Users (username, password, role) VALUES (?, ?, ?)", [
+   ("admin_teacher", "password123", "teacher"),
+   ("student_ali", "password123", "student"),
+   ("student_fatima", "password123", "student"),
+])
 
 # ── Lessons ───────────────────────────────────────────────
 cursor.executemany("INSERT INTO Lessons (title, topic, content) VALUES (?, ?, ?)", [

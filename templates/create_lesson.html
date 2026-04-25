@@ -4,11 +4,12 @@
 <head>
     <title>Create Lesson</title>
     <style>
+
         body {
             font-family: Arial, sans-serif;
             max-width: 600px;
-            margin: 40px auto;
-            background-color: #f5f5f5;
+            margin: 0 auto;
+            background-color: #f0faf5;
             padding: 20px;
         }
         h2 {
@@ -56,7 +57,7 @@
 
 <h2>Create Lesson</h2>
 
-<form action ="/create_lesson.html" method="POST">
+<form action ="/create_lesson" method="POST">
     <label>Title:</label><br>
     <input type="text" name="title"><br>
 
@@ -67,7 +68,7 @@
     <textarea name="content"></textarea><br>
 
     <button type="submit">Save Lesson</button>
-    <a href="/lessons">Cancel</a>
+    <a href="/teacher/dashboard">Cancel</a>
 
 
 </form>

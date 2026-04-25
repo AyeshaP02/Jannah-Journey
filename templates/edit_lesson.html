@@ -1,20 +1,72 @@
-Edit_lesson 
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Edit Lesson</title>
+    
+     <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f0faf5;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 
 <h2>Edit Lesson</h2>
 
 <form method="POST">
-    <input type="text" name="title" value="{{ lesson[1] }}"><br>
-    <input type="text" name="topic" value="{{ lesson[2] }}"><br>
-    <textarea name="content">{{ lesson[3] }}</textarea><br>
-
+    <label>Title:</label><br>
+    <input type="text" name="title" value="{{ lesson[1] }}"><br><br>
+    <label>Topic:</label><br>
+    <input type="text" name="topic" value="{{ lesson[2] }}"><br><br>
+    <label>Content:</label><br>
+    <textarea name="content">{{ lesson[3] }}</textarea><br><br>
     <button type="submit">Update</button>
+    <a href="/lessons">Cancel</a>
 </form>
 
 </body>
