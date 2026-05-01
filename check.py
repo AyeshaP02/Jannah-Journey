@@ -19,5 +19,9 @@ print("\n=== Lessons ===")
 cursor.execute("SELECT * FROM Lessons")
 print(cursor.fetchall())
 
+print("\n=== Quiz Results ===")
+cursor.execute("SELECT * FROM Quiz_Results")
+print(cursor.fetchall())
+
 conn.close()
  
