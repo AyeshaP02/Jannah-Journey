@@ -35,13 +35,14 @@
             background: #4CAF50; 
             color: white; 
             border-radius: 5px; 
-            text-decoration: none; }
-    </style>
+            text-decoration: none; 
+            }
+</style>
 </head>
 
 <body>
 
-<h2>{{ student[1] }}'s Progress</h2>
+<h2>📊 {{ student[1] }}'s Progress</h2>
 <table>
     <tr>
         <th>Quiz</th>
@@ -55,9 +56,8 @@
         <td>{{ result[2] }}</td>
     </tr>
     {% endfor %}
+    
 </table>
-
 <a class="btn" href="/teacher/dashboard">← Back to Dashboard</a>
-
 </body>
 </html>

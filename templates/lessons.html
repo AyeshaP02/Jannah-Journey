@@ -120,7 +120,7 @@
             {% else %}
                 <!-- Students see Take Quiz -->
                 {% if lesson[5] %}
-                    <a class="btn-quiz" href="/take_quiz/{{ lesson[5] }}">Start Quiz</a>
+                    <a class="btn-quiz" href="/take_quiz/{{ lesson[5] }}">Start Quiz ✨</a>
                 {% else %}
                     <span style="color: gray; font-size: 13px;">No quiz yet</span>
                 {% endif %}
@@ -137,7 +137,7 @@
     {% endif %}
     
     {% if session['role'] == 'student' %}
-        <a href="/progress">My Progress</a>
+        <a href="/progress">⭐ My Progress</a>
     {% endif %}
 </div>
 

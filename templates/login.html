@@ -13,14 +13,17 @@
         button:hover { background: #45a049; }
         .error { color: red; text-align: center; }
         .link { text-align: center; margin-top: 15px; }
+        
     </style>
 
 </head>
-
 <body>
+
+  
+
     
 <div class="box">
-    <h2>Login</h2>
+    <h2>🕌 Login</h2>
     {% if error %}<p class="error">{{ error }}</p>{% endif %}
     <form method="POST" action="/login">
         <input type="text" name="username" placeholder="Username" required>

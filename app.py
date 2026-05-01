@@ -415,7 +415,7 @@ def view_student(user_ID):
 #home page of jannah journey
 @app.route('/')
 def home():
-    return redirect('/lessons')
+    return redirect('/login')
 
 
 if __name__ == '__main__':

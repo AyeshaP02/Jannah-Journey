@@ -24,3 +24,23 @@ F3.T1 - I tested feature 3- Quiz Creation. I ran the check.py file to verify all
 F3.T2 - Next i navigated to the quiz creation page. I entered the quiz title and questions and selected which was the correct answer choice. Successfully accepted all inputs and the UI behaves correctly.
 
 F3.T3 - Next I submitted the quiz form and checked the database saved the tables. I also verified the questions and answers were saved correctly. Successfully the data is stored correctly, and the questions are linked to the answers and there are no errors.  
+
+--Week 6--
+
+F4.T1 - I naviagted to the /take_quiz/1 page. I verified the template was using the correct quiz_ID = q[2] which displays the question text. Successfully all questions displayed correctly with answer choices.
+
+F4-T2 - Next, I answered all the questions and submitted the quiz. Validity test: Successfully the quiz calculated the score and displayed it. Invalid test: I tried answering one question only and submitted the quiz. Successfully the system handled the missing answer error and successfully the page didn't crash and still calculated the score correctly. 
+
+F4-T3 - I verified if the Quiz_Results table saved the User_ID and if the results are linked to the specific student in every session. Successfully the results were correctly stored in the Quiz_Results table. 
+
+F5.T1 - Next, I navigated to the student dashboard. I first registered and logged in as a student which took me
+to the /progress page. Successfully the dashboard displayed the students username, quiz title, and completion date. Thereafter the student can choose to logout or go back to the /Lessons page.
+
+F6.T1 - Next, I registered and logged in as a teacher. I was routed to the /teacher/dashboard page. Successfully all registered students were displayed correctly with their quiz count, and average score. Quizzes without a score were displayed with "N/A". 
+
+F6.T2 - Next, I used the view button which is on the right hand corner of evry students name. This allowed me to select and view a specific students progress through the teachers dashboard. Successfully, the selected students progress loaded correctly showing their completed quiz, score and completion date. The back button took me back to the teacher dashboard which then allows me to naviagate to the lessons page(edit/delete lesson, create quiz) and logout. 
+
+F_all.T1 - Finally, I ran the app end-end. I registered as a student, logged in, read the lesson, took a quiz and submitted it, viewed my progress on the dashboard and then logged out sucessfully. 
+Next, I registed as a teacher and logged in, created a lesson, edited a lesson, and checked for deletion pop up. 
+My dashboard had a list of all the students, their quiz scores and i could select to view a students progress. Successfully, all the features are working correctly with no crashes. All relationships were linked correctly.
+ 
